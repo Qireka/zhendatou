@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    MY WEB | HOME
+{% endblock %}
+
+
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+
+{% block nav_home_active %}
+    active
+{% endblock %}
+
+
+{% block content %}
+    <h3 class="home_content">WELCOME!<br>这 是 首 页</h3>
+{% endblock %}

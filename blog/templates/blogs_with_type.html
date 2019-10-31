@@ -1,0 +1,8 @@
+{% extends 'blog_list.html' %}
+
+
+{% block title %}
+    分类：{{ blog_type.type_name }}
+{% endblock %}
+
+{# 内容可以和blog_list一样，因为对于blog_list和blog_with_type来说各自的blogs参数不一样#}
