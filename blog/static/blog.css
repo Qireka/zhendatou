@@ -32,3 +32,6 @@ ul.blog-info-description li{
 div.blog-content p {
     text-indent: 2em;
 }
+div.paginator {
+    text-align: center;
+}

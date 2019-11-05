@@ -22,4 +22,7 @@ class Blog(models.Model):
     last_updated_time = models.DateTimeField(auto_now=True)     # 最后修改时间
 
     def __str__(self):
-        return "<Blog: %a>" % self.title
+        return "<Blog: %s>" % self.title
+
+    class Meta:
+        ordering = ['-create_time']
