@@ -5,4 +5,5 @@
     分类：{{ blog_type.type_name }}
 {% endblock %}
 
+{% block blog_list_title %}分类：{{ blog_type.type_name }} <a href="{%  url 'blog_list' %}">查看全部博客</a>{% endblock %}
 {# 内容可以和blog_list一样，因为对于blog_list和blog_with_type来说各自的blogs参数不一样#}

@@ -29,9 +29,13 @@ ul.blog-info-description li{
     margin-bottom: 1em;
 }
 
-div.blog-content p {
+div.blog-content {
     text-indent: 2em;
 }
 div.paginator {
     text-align: center;
+}
+
+div.more-blog {
+    margin-top: 1em ;
 }
