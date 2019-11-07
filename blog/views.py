@@ -72,10 +72,16 @@ def blogs_with_date(request, year, month):
 
 
 def blog_detail(request, blog_pk):
-    context = {}
     # 用主键寻找指定的blog导入字典，如果没找到返回404
     blog = get_object_or_404(Blog, pk=blog_pk)
+    if not request.COOKIES.get('blog_%s_read' % blog_pk):
+        blog.page_views += 1
+        blog.save()
+
+    context = {}
     context['previous_blog'] = Blog.objects.filter(create_time__gt=blog.create_time).last()
     context['next_blog'] = Blog.objects.filter(create_time__lt=blog.create_time).first()
     context['blog'] = blog
-    return render_to_response('blog_detail.html', context)
+    response = render_to_response('blog_detail.html', context)  # 相应
+    response.set_cookie('blog_%s_read' % blog_pk, 'true')  # 可以增加参数max_age=存活时间
+    return response
