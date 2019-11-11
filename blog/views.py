@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.conf import settings
 from django.db.models import Count
 from .models import Blog, BlogType
+from read_statistics.utils import read_statistics_once_read
 
 
 def get_blog_list_common_data(request, blogs_all_list):
@@ -74,14 +75,12 @@ def blogs_with_date(request, year, month):
 def blog_detail(request, blog_pk):
     # 用主键寻找指定的blog导入字典，如果没找到返回404
     blog = get_object_or_404(Blog, pk=blog_pk)
-    if not request.COOKIES.get('blog_%s_read' % blog_pk):
-        blog.page_views += 1
-        blog.save()
+    read_cookie_key = read_statistics_once_read(request, blog)
 
     context = {}
     context['previous_blog'] = Blog.objects.filter(create_time__gt=blog.create_time).last()
     context['next_blog'] = Blog.objects.filter(create_time__lt=blog.create_time).first()
     context['blog'] = blog
     response = render_to_response('blog_detail.html', context)  # 相应
-    response.set_cookie('blog_%s_read' % blog_pk, 'true')  # 可以增加参数max_age=存活时间
+    response.set_cookie(read_cookie_key, 'true')  # 阅读cookie标记
     return response
