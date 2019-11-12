@@ -18,9 +18,44 @@
 
 
 {% block content %}
-    <h3 class="home_content">WELCOME | 欢 迎</h3>
+    <h3 class="home-content">WELCOME | 欢 迎</h3>
     <!-- 图表容器 DOM -->
     <div id="container" style="width: 600px;height:400px;"></div>
+    <!-- 24小时内热门博客 -->
+    <div class="hot-data-title">
+        <h3>今日热门博客</h3>
+        <ul>
+            {% for hot_data in today_hot_data %}
+                <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})
+                </li>
+            {% empty %}
+                <li>今日无热门博客</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="hot-data-title">
+        <h3>昨日热门博客</h3>
+        <ul>
+            {% for hot_data in yesterday_hot_data %}
+                <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})
+                </li>
+            {% empty %}
+                <li>昨日无热门博客</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="hot-data-title">
+        <h3>7天热门博客</h3>
+        <ul>
+            {% for hot_blog in hot_blogs_for_7_days %}
+                <li><a href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}</a>({{ hot_blog.read_num_sum }})
+                </li>
+            {% empty %}
+                <li>昨日无热门博客</li>
+            {% endfor %}
+        </ul>
+    </div>
+
     <script>
         // 图表配置
         var options = {
@@ -32,7 +67,7 @@
             },
             xAxis: {
                 categories: {{ dates|safe }},
-                tickmarkPlacement: 'on'// x 轴分类
+                tickmarkPlacement: 'on',// x 轴分类
             },
             yAxis: {
                 title: {
