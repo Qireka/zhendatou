@@ -6,6 +6,7 @@ from django.contrib import auth
 from django.core.cache import cache
 from django.db.models import Sum
 from django.utils import timezone
+from django.urls import reverse
 from blog.models import Blog
 
 
@@ -43,8 +44,9 @@ def login(request):
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
     user = auth.authenticate(request, username=username, password=password)
+    referer = request.META.get('HTTP_REFERER', reverse('home'))
     if user is not None:
         auth.login(request, user)
-        return redirect('/')
+        return redirect(referer)
     else:
         return render(request, 'error.html', {'message': '用户名或密码不正确'})
