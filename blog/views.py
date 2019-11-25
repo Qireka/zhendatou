@@ -90,3 +90,5 @@ def blog_detail(request, blog_pk):
     response = render(request, 'blog_detail.html', context)  # 相应
     response.set_cookie(read_cookie_key, 'true')  # 阅读cookie标记
     return response
+
+
