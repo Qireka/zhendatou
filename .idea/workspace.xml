@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/blog/templates/blog_detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="58" lean-forward="true" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -162,7 +162,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="702" />
     <option name="width" value="789" />
     <option name="height" value="1227" />
@@ -184,12 +184,6 @@
               <item name="zhendatou" type="b2602c69:ProjectViewProjectNode" />
               <item name="blogproject" type="462c0819:PsiDirectoryNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhendatou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blogproject" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zhendatou" type="b2602c69:ProjectViewProjectNode" />
@@ -468,11 +462,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574835688896</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="增加js代码中的域名信息">
+      <created>1574835913544</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574835913544</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170802000" />
+    <option name="totallyTimeSpent" value="171775000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -484,13 +485,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1215" height="775" extended-state="6" />
+    <frame x="-7" y="-7" width="1215" height="775" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47331786" visible="true" weight="0.15643907" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47433904" visible="true" weight="0.15643907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="Terminal" order="3" sideWeight="0.52668214" side_tool="true" visible="true" weight="0.15643907" />
+      <window_info id="Terminal" order="3" sideWeight="0.525661" side_tool="true" visible="true" weight="0.15643907" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3281493" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -501,7 +502,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970452" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32970452" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50043213" side_tool="true" visible="true" weight="0.32970452" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50043213" side_tool="true" weight="0.32970452" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32763976" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -805,7 +806,7 @@
     <entry file="file://$PROJECT_DIR$/blog/templates/blog_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="58" lean-forward="true" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
         </state>
       </provider>
     </entry>
