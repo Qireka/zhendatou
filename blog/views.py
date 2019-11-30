@@ -44,6 +44,7 @@ def get_blog_list_common_data(request, blogs_all_list):
     context['blog_dates'] = blog_dates_dict
     return context
 
+
 def blog_list(request):
     blogs_all_list = Blog.objects.all()
     context = get_blog_list_common_data(request, blogs_all_list)
