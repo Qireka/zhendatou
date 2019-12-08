@@ -10,3 +10,7 @@ body {
 span.pull-left ul {
     list-style: none;
 }
+
+ul.navbar-right {
+    margin-right: 0;
+}

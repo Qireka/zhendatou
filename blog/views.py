@@ -1,3 +1,4 @@
+from django.contrib import auth
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
 from django.conf import settings
@@ -79,3 +80,7 @@ def blog_detail(request, blog_pk):
     response = render(request, 'blog_detail.html', context)  # 响应
     response.set_cookie(read_cookie_key, 'true')  # 阅读cookie标记
     return response
+
+
+
+
