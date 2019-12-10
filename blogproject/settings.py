@@ -179,3 +179,11 @@ CACHE = {
         'LOCATION': 'my_cache_table',
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EamilBackend',
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '932203054@qq.com'
+EMAIL_HOST_PASSWORD =
+EMAIL_SUBJECT_PREFIX =
+EMAIL_USE_TLS
