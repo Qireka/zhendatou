@@ -12,6 +12,7 @@ class LoginForm(forms.Form):
     def clean(self):
         username = self.cleaned_data['username']
         password = self.cleaned_data['password']
+
         user = auth.authenticate(username=username, password=password)
         if user is None:
             raise forms.ValidationError('用户名或密码不正确')
@@ -44,14 +45,14 @@ class RegForm(forms.Form):
 
     def clean_email(self):
         email = self.cleaned_data['email']
-        if User.objects.filter(username=email).exists():
+        if User.objects.filter(email=email).exists():
             raise forms.ValidationError('邮箱已存在')
         return email
 
     def clean_password_again(self):
         password = self.cleaned_data['password']
         password_again = self.cleaned_data['password_again']
-        if password_again != password:
+        if password != password_again:
             raise forms.ValidationError('两次输入的密码不一致')
         return password_again
 
@@ -76,10 +77,10 @@ class ChangeNicknameForm(forms.Form):
             raise forms.ValidationError('用户尚未登录')
         return self.cleaned_data
 
-    def clean_nickname(self):
+    def clean_nickname_new(self):
         nickname_new = self.cleaned_data.get('nickname_new', '').strip()
         if nickname_new == '':
-            raise ValueError('新名称不能为空')
+            raise forms.ValidationError("新的昵称不能为空")
         return nickname_new
 
 
@@ -90,5 +91,43 @@ class BindEmailForm(forms.Form):
     )
     verification_code = forms.CharField(
         label='验证码',
+        required=False,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '点击“发送验证码”发送到邮箱'})
     )
+
+    def __init__(self, *args, **kwargs):
+        if 'request' in kwargs:
+            self.request = kwargs.pop('request')
+        super(BindEmailForm, self).__init__(*args, **kwargs)
+
+    def clean(self):
+        # 判断用户是否登录
+        if self.request.user.is_authenticated:
+            self.cleaned_data['user'] = self.request.user
+        else:
+            raise forms.ValidationError('用户尚未登录')
+
+        # 判断用户是否已绑定邮箱
+        if self.request.user.email != '':
+            raise forms.ValidationError('你已经绑定邮箱')
+
+        # 判断验证码
+        code = self.request.session.get('bind_email_code', '')
+        verification_code = self.cleaned_data.get('verification_code', '')
+        if not (code != '' and code == verification_code):
+            raise forms.ValidationError('验证码不正确')
+
+        return self.cleaned_data
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError('该邮箱已经被绑定')
+        return email
+
+    def clean_verification_code(self):
+        verification_code = self.cleaned_data.get('verification_code', '').strip()
+        if verification_code == '':
+            raise forms.ValidationError('验证码不能为空')
+        return verification_code
+

@@ -1,5 +1,6 @@
 import string
 import random
+import time
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -19,6 +20,7 @@ def login(request):
             return redirect(request.GET.get('from', reverse('home')))
     else:
         login_form = LoginForm()
+
     context = {}
     context['login_form'] = login_form
     return render(request, 'user/login.html', context)
@@ -40,6 +42,7 @@ def register(request):
             return redirect(request.GET.get('from', reverse('home')))
     else:
         reg_form = RegForm()
+
     context = {}
     context['reg_form'] = reg_form
     return render(request, 'user/register.html', context)
@@ -82,9 +85,11 @@ def bind_email(request):
     redirect_to = request.GET.get('from', reverse('home'))
 
     if request.method == 'POST':
-        form = BindEmailForm(request.POST, user=request.user)
+        form = BindEmailForm(request.POST, request=request)
         if form.is_valid():
-            pass
+            email = form.cleaned_data['email']
+            request.user.email = email
+            request.user.save()
             return redirect(redirect_to)
     else:
         form = BindEmailForm()
@@ -100,22 +105,28 @@ def bind_email(request):
 
 def send_verification_code(request):
     email = request.GET.get('email', '')
-    data = []
+    data = {}
 
     if email != '':
         # 生成验证码
         code = ''.join(random.sample(string.ascii_letters + string.digits, 5))
-        request.session['bind_email_code'] = code
+        now = int(time.time())
+        send_code_time = request.session.get('send_code_time', 0)
+        if now - send_code_time < 30:
+            data['status'] = 'ERROR'
+        else:
+            request.session['bind_email_code'] = code
+            request.session['send_code_time'] = now
 
-        # 发送邮件
-        send_mail(
-            '绑定邮箱',
-            '验证码: %s' % code,
-            '932203054@qq.com'
-            [email],
-            fail_silently=False,
-        )
-        data['status'] = 'SUCCESS'
+            # 发送邮件
+            send_mail(
+                '绑定邮箱',
+                '验证码：%s' % code,
+                '932203054@qq.com',
+                [email],
+                fail_silently=False,
+            )
+            data['status'] = 'SUCCESS'
     else:
         data['status'] = 'ERROR'
-    return JsonResponse
+    return JsonResponse(data)
