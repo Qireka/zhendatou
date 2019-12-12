@@ -66,10 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
-            'libraries': {
-                'comment_tags': 'comment.templatetags.comment_tags',
-            },
+            ]
         },
     },
 ]
@@ -94,7 +91,7 @@ DATABASES = {
         'NAME': 'zhendatou_db',
         'USER': 'wzp',
         'PASSWORD': 'Apple13951633644',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
