@@ -14,3 +14,21 @@ span.pull-left ul {
 ul.navbar-right {
     margin-right: 0;
 }
+
+footer {
+    background: #f6f6f6;
+    position: relative;
+}
+
+.footer-inner {
+    max-width: 1226px;
+    padding: 16px 20px 14px;
+    margin: 0 auto;
+    color: #8a8a8a;
+    text-shadow: 0 -1px 0 #c3c3c3;
+}
+
+.copyright {
+    text-align: center;
+    float: none !important;
+}
