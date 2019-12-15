@@ -33,3 +33,4 @@ def has_nickname(self):
 User.get_nickname = get_nickname
 User.has_nickname = has_nickname
 User.get_nickname_or_username = get_nickname_or_username
+
