@@ -24,18 +24,20 @@ class LoginForm(forms.Form):
 class RegForm(forms.Form):
     username = forms.CharField(label='用户名', required=True,
                                max_length=30, min_length=3,
-                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '请输入用户名(3-30)'}))
+                               widget=forms.TextInput(
+                                   attrs={'class': 'form-control', 'placeholder': '请输入用户名(3-30)，区分大小写'}))
 
-    email = forms.EmailField(label='邮箱', required=False,
-                             widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '请输入邮箱'}))
+    # mail = forms.EmailField(label='邮箱', required=False,
+    # widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '请输入邮箱'}))
 
     password = forms.CharField(label='密码', required=True,
                                min_length=6,
                                widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '请输入密码'}))
 
-    password_again = forms.CharField(label='密码', required=True,
+    password_again = forms.CharField(label='确认密码', required=True,
                                      min_length=6,
-                                     widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '再次输入密码'}))
+                                     widget=forms.PasswordInput(
+                                         attrs={'class': 'form-control', 'placeholder': '再次输入密码'}))
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -43,11 +45,12 @@ class RegForm(forms.Form):
             raise forms.ValidationError('用户名已存在')
         return username
 
+    """
     def clean_email(self):
         email = self.cleaned_data['email']
-        if User.objects.filter(email=email).exists():
+        if User.objects.filter(email=email).exists() and email != '':
             raise forms.ValidationError('邮箱已存在')
-        return email
+        return email"""
 
     def clean_password_again(self):
         password = self.cleaned_data['password']
@@ -87,7 +90,7 @@ class ChangeNicknameForm(forms.Form):
 class BindEmailForm(forms.Form):
     email = forms.EmailField(
         label='邮箱',
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '请输入正确的邮箱'})
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '请输入的邮箱'})
     )
     verification_code = forms.CharField(
         label='验证码',
@@ -130,4 +133,3 @@ class BindEmailForm(forms.Form):
         if verification_code == '':
             raise forms.ValidationError('验证码不能为空')
         return verification_code
-

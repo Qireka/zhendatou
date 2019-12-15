@@ -31,7 +31,7 @@ def register(request):
         reg_form = RegForm(request.POST)
         if reg_form.is_valid():
             username = reg_form.cleaned_data['username']
-            email = reg_form.cleaned_data['email']
+            email = ''     # reg_form.cleaned_data['email']
             password = reg_form.cleaned_data['password']
             # 创建用户
             user = User.objects.create_user(username, email, password)
