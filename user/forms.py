@@ -27,9 +27,6 @@ class RegForm(forms.Form):
                                widget=forms.TextInput(
                                    attrs={'class': 'form-control', 'placeholder': '请输入用户名(3-30)，区分大小写'}))
 
-    # mail = forms.EmailField(label='邮箱', required=False,
-    # widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '请输入邮箱'}))
-
     password = forms.CharField(label='密码', required=True,
                                min_length=6,
                                widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '请输入密码'}))
