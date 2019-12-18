@@ -37,7 +37,7 @@
                                     阅读({{ blog.get_read_num }})&nbsp;&nbsp;
                                     评论({% get_comment_count blog %})
                                 </p>
-                                <p>{{ blog.content|striptags|truncatechars_html:120 }}......</p>
+                                <p>{{ blog.content|striptags|truncatechars_html:120|cut:"&nbsp;" }}......</p>
                             </div>
                         {% empty %}
                             <div class="blog"><p>-- 暂无博客 --</p></div>
