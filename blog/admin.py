@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import BlogType, Blog
 
+
 @admin.register(BlogType)
 class BlogTypeAdmin(admin.ModelAdmin):
     list_display = ('id', 'type_name')

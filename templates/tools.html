@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    TOOLS
+{% endblock %}
+
+
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'tools.css' %}">
+{% endblock %}
+
+
+{% block nav_tool_active %}
+    active
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <ul>
+            {% for tool in tools %}
+                <li class="tool_cell">
+                    <a href="{{ tool.url }}">
+                        <img src="/media/{{ tool.background }}" alt="{{ tool.name }}">
+                        <span>{{ tool.name }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
