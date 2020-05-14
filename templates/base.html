@@ -32,6 +32,7 @@
                 <li class="{% block nav_home_active %}{% endblock %}"><a href="{% url 'home' %}">首页</a></li>
                 <li class="{% block nav_blog_active %}{% endblock %}"><a href="{% url 'blog_list' %}">博客</a></li>
                 <li class="{% block nav_tool_active %}{% endblock %}"><a href="{% url 'tools_list' %}">导航</a></li>
+                <li><a href="http://zhendatou.cn:8000">网盘</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if not user.is_authenticated %}
