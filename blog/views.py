@@ -59,7 +59,7 @@ def blogs_with_type(request, blog_type_pk):
 
 
 def blogs_with_date(request, year, month):
-    # 用过滤器找到（类别为函数参数中的blog_type）的blog，写入字典
+    # 用过滤器找到（类别为函数参数中的blog_date）的blog，写入字典
     blogs_all_list = Blog.objects.filter(create_time__year=year, create_time__month=month)
     context = get_blog_list_common_data(request, blogs_all_list)
     context['blogs_with_date'] = '%s年%s月' % (year, month)
