@@ -1,37 +1,39 @@
 .home-content {
-        font-size: 222%;
-        text-align: center;
-        margin-top: 4em;
-        margin-bottom: 2em;
-    }
+    font-size: 222%;
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
 
 div#container {
-        margin: 0 auto;
-        height: 15em;
-        min-width: 20em;
-        max-width: 30em;
+    margin: 0 auto;
+    height: 15em;
+    min-width: 20em;
+    max-width: 30em;
 }
 
 div.hot-data-title {
-        text-align: center;
-        margin-top: 2em;
-        margin-bottom: 2em;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
-div.blog-check{
-        margin-top: 30px;
+div.blog-check {
+    margin-top: 30px;
 }
 
-div.blog-before{
-        width: 50%;
-        float: left;
+div.blog-before {
+    width: 50%;
+    float: left;
+    padding-left: 5em;
 }
 
-div.blog-7{
-        width: 50%;
-        float: left;
+div.blog-7 {
+    width: 50%;
+    float: left;
+    padding-right: 5em;
 }
 
-h3.h-7{
-        margin-top: 0px;
+h3.h-7 {
+    margin-top: 0px;
 }

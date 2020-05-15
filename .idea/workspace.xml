@@ -4,7 +4,6 @@
     <list default="true" id="cf6cd0f6-2245-46a2-bb44-2df9e7c2ab33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +42,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="365">
+              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
               <folding>
                 <element signature="e#518#1484#0#HTML" />
-                <element signature="e#1310#1679#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -56,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            <state relative-caret-position="308">
+              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -437,21 +435,7 @@
       <workItem from="1577932826540" duration="1739000" />
       <workItem from="1578214681036" duration="747000" />
       <workItem from="1589415970442" duration="3057000" />
-      <workItem from="1589424966369" duration="6526000" />
-    </task>
-    <task id="LOCAL-00006" summary="完成内容页里的上下页链接&#10;加一个日期分类&#10;简化方法">
-      <created>1573025745935</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1573025745935</updated>
-    </task>
-    <task id="LOCAL-00007" summary="博客分类统计">
-      <created>1573036014627</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1573036014627</updated>
+      <workItem from="1589424966369" duration="7833000" />
     </task>
     <task id="LOCAL-00008" summary="ckeditor实现博客后台富文本编辑，包括图片上传">
       <created>1573107910793</created>
@@ -782,11 +766,25 @@
       <option name="project" value="LOCAL" />
       <updated>1589438801143</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="调整一下home页面blog阅读统计位置">
+      <created>1589528198608</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1589528198608</updated>
+    </task>
+    <task id="LOCAL-00056" summary="调整一下home页面blog阅读统计位置">
+      <created>1589528698981</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1589528698981</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306362000" />
+    <option name="totallyTimeSpent" value="307669000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -891,7 +889,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加js代码中的域名信息" />
     <MESSAGE value="requirements更新" />
     <MESSAGE value="settings增加STATIC_ROOT" />
     <MESSAGE value="注释掉django.forms的中会导致报错的一行renderer" />
@@ -916,7 +913,8 @@
     <MESSAGE value="修改一下html，现在下拉菜单有一个后台入口" />
     <MESSAGE value="试着修复日期归档不显示的bug" />
     <MESSAGE value="导航栏加一个网盘入口" />
-    <option name="LAST_COMMIT_MESSAGE" value="导航栏加一个网盘入口" />
+    <MESSAGE value="调整一下home页面blog阅读统计位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整一下home页面blog阅读统计位置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1253,13 +1251,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/staticfiles/templatetags/staticfiles.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1283,21 +1274,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        <state relative-caret-position="365">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding>
             <element signature="e#518#1484#0#HTML" />
-            <element signature="e#1310#1679#0#HTML" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state relative-caret-position="308">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
         </state>
       </provider>
     </entry>
