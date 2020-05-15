@@ -17,3 +17,17 @@ div.hot-data-title {
         margin-top: 2em;
         margin-bottom: 2em;
 }
+
+div.blog-check{
+        margin-top: 30px;
+}
+
+div.blog-before{
+        width: 50%;
+        float: left;
+}
+
+div.blog-7{
+        width: 50%;
+        float: left;
+}
