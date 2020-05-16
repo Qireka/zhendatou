@@ -9,6 +9,11 @@
 {% block header_extends %}
     <link rel="stylesheet" href="{% static 'home.css' %}">
     <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'jquery.fullPage.css' %}"/>
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'jquery.fullPage.min.js' %}"></script>
+    <script src="{% static 'home.js' %}"></script>
 {% endblock %}
 
 
@@ -18,50 +23,57 @@
 
 
 {% block content %}
-    <h3 class="home-content">WELCOME | 欢 迎</h3>
-    <!-- 图表容器 DOM -->
-    <div id="container" style="width: 600px;height:400px;"></div>
-    <!-- 24小时内热门博客 -->
-    <div class="blog-check">
-        <div class="blog-before">
-            <div class="hot-data-title">
-                <h3>今日热门博客</h3>
-                <ul>
-                    {% for hot_data in today_hot_data %}
-                        <li>
-                            <a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})
-                        </li>
-                    {% empty %}
-                        <li>今日无热门博客</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="hot-data-title">
-                <h3>昨日热门博客</h3>
-                <ul>
-                    {% for hot_data in yesterday_hot_data %}
-                        <li>
-                            <a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})
-                        </li>
-                    {% empty %}
-                        <li>昨日无热门博客</li>
-                    {% endfor %}
-                </ul>
-            </div>
+    <div id="fullpage">
+        <div class="section section1">
+            <h3 class="home-content">WELCOME | 欢 迎</h3>
         </div>
-        <div class="hot-data-title blog-7">
-            <h3 class="h-7">7天热门博客</h3>
-            <ul>
-                {% for hot_blog in hot_blogs_for_7_days %}
-                    <li>
-                        <a href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}</a>({{ hot_blog.read_num_sum }})
-                    </li>
-                {% empty %}
-                    <li>昨日无热门博客</li>
-                {% endfor %}
-            </ul>
+        <div class="section">
+            <!-- 图表容器 DOM -->
+            <div id="container" style="width: 600px;height:400px;"></div>
+            <!-- 24小时内热门博客 -->
+            <div class="blog-check">
+                <div class="blog-before">
+                    <div class="hot-data-title">
+                        <h3>今日热门博客</h3>
+                        <ul>
+                            {% for hot_data in today_hot_data %}
+                                <li>
+                                    <a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})
+                                </li>
+                            {% empty %}
+                                <li>今日无热门博客</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="hot-data-title">
+                        <h3>昨日热门博客</h3>
+                        <ul>
+                            {% for hot_data in yesterday_hot_data %}
+                                <li>
+                                    <a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>({{ hot_data.read_num }})
+                                </li>
+                            {% empty %}
+                                <li>昨日无热门博客</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="hot-data-title blog-7">
+                    <h3 class="h-7">7天热门博客</h3>
+                    <ul>
+                        {% for hot_blog in hot_blogs_for_7_days %}
+                            <li>
+                                <a href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}</a>({{ hot_blog.read_num_sum }})
+                            </li>
+                        {% empty %}
+                            <li>昨日无热门博客</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+
 
     <script>
         // 图表配置

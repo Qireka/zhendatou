@@ -1,7 +1,7 @@
 .home-content {
     font-size: 222%;
     text-align: center;
-    margin-top: 4em;
+    margin-top: 2em;
     margin-bottom: 2em;
 }
 
@@ -36,4 +36,13 @@ div.blog-7 {
 
 h3.h-7 {
     margin-top: 0px;
+}
+
+div.section1{
+    text-align: center;
+    background-size: cover;
+}
+
+.button{
+    width: 3em;
 }
