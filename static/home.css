@@ -1,8 +1,8 @@
 .home-content {
     font-size: 222%;
     text-align: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 0em;
+    margin-bottom: 5em;
 }
 
 div#container {
@@ -20,6 +20,7 @@ div.hot-data-title {
 
 div.blog-check {
     margin-top: 30px;
+    padding-bottom: 25em;
 }
 
 div.blog-before {
